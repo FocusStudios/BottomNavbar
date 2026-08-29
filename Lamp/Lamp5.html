@@ -255,7 +255,33 @@ column-gap:calc((60vw - 250px)/4);}
 
 </nav>
 
-<script src="Lamp.js"></script>
+<script>
+
+const Icons = document.querySelectorAll(".icon");
+const frames = document.querySelectorAll(".frame");
+const Indicator = document.querySelector(".indicator");
+
+let x = 1;
+
+Icons.forEach((Icon,index) => {
+
+Icon.addEventListener("click",() => {
+
+document.querySelector(".icon.active").classList.remove("active");
+Icon.classList.add("active");
+
+document.querySelector(".frame.active").classList.remove("active");
+frames[index].classList.add("active");
+
+Indicator.style.animation = `Gentle${x}${index + 1} 1s forwards`;
+
+x = index + 1;
+
+});
+
+});
+  
+</script>
 
 </body>
 
