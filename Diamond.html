@@ -32,6 +32,14 @@ font-family:"Montserrat", sans-serif;}
 
 body {
 margin:0;
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:hidden;}
+
+.Body {
+position:fixed;
+top:0;
 width:100vw;
 height:100vh;
 display:flex;
@@ -39,15 +47,6 @@ align-items:center;
 justify-content:center;
 overflow:hidden;
 background:#00E0FF;}
-
-.Container {
-position:absolute;
-width:330px;
-height:250px;
-display:flex;
-align-items:center;
-justify-content:center;
-pointer-events:none;}
 
 .main-container {
 position:absolute;
@@ -331,6 +330,8 @@ transform:scale(calc(1 + 2*(100vw - 360px)/1200px));}
 </head>
 <body>
 
+<div class="Body">
+
 <div class="Container">
 
 <img class="MockUp" src="MockUp.png">
@@ -525,6 +526,8 @@ transform:scale(calc(1 + 2*(100vw - 360px)/1200px));}
 </ul>
 
 </nav>
+
+</div>
 
 </div>
 
