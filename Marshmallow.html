@@ -36,8 +36,27 @@ height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
-overflow:hidden;
+overflow-x:hidden;
 background:#E5C7FC;}
+
+.Wrapper {
+position:absolute;
+top:0;
+width:100%;
+height:100%;
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:hidden;}
+
+.Container {
+position:absolute;
+width:100%;
+height:calc(200px + 600px*(100vw - 360px)/1200px);
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:hidden;}
 
 .BottomNavBar {
 position:absolute;
@@ -48,7 +67,7 @@ align-items:center;
 justify-content:center;
 transform:scale(0.7);}
 
-.Wrapper {
+.wrapper {
 position:absolute;
 bottom:10px;
 width:320px;
@@ -127,7 +146,7 @@ bottom:0;
 left:-552.5px;
 fill:var(--background);}
 
-.wrapper {
+.icons-container {
 position:absolute;
 bottom:60px;
 width:270px;
@@ -251,8 +270,14 @@ transform:scale(calc(0.7 + 2.3*(100vw - 360px)/1200px));}
 }
 
 </style>
+
 </head>
+
 <body>
+
+<div class="Wrapper">
+
+<div class="Container">
 
 <nav class="BottomNavBar">
 
@@ -272,7 +297,7 @@ transform:scale(calc(0.7 + 2.3*(100vw - 360px)/1200px));}
  <path fill-rule="evenodd" clip-rule="evenodd" d="M570 0H0V70H1240V0H670C662.338 0.208011 654.396 3.70432 649.483 9.61698L643.094 17.3039C631.088 31.7517 608.913 31.7517 596.906 17.3039L590.518 9.61729C585.604 3.70443 577.662 0.208014 570 0Z"/>
 </svg>
 
-<div class="Wrapper">
+<div class="wrapper">
 
 <ul class="ICONS">
 
@@ -306,7 +331,7 @@ transform:scale(calc(0.7 + 2.3*(100vw - 360px)/1200px));}
 
 </div>
 
-<div class="wrapper">
+<div class="icons-container">
 
 <ul class="icons A">
 
@@ -398,7 +423,32 @@ transform:scale(calc(0.7 + 2.3*(100vw - 360px)/1200px));}
 
 </nav>
 
+</div>
+
+</div>
+
 <script>
+
+
+const Wrapper = document.querySelector(".Wrapper");
+const Container = document.querySelector(".Container");
+
+function Resize() {
+
+if(window.innerHeight < Container.offsetHeight){
+
+Wrapper.style.height = "calc(200px + 600px*(100vw - 360px)/1200px)";
+
+}else{
+
+Wrapper.style.height = "100%";
+
+}
+
+}
+
+Resize();
+window.addEventListener("resize",Resize);
 
 const IconAs = document.querySelectorAll(".icon.A");
 const IconBs = document.querySelectorAll(".icon.B");
