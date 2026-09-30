@@ -32,14 +32,6 @@ font-family:"Montserrat", sans-serif;}
 
 body {
 margin:0;
-display:flex;
-align-items:center;
-justify-content:center;
-overflow:hidden;}
-
-.Body {
-position:fixed;
-top:0;
 width:100vw;
 height:100vh;
 display:flex;
@@ -48,29 +40,66 @@ justify-content:center;
 overflow:hidden;
 background:#00E0FF;}
 
-.Container {
-position:absolute;
-width:330px;
-height:250px;
+.Main-Container {
+position:fixed;
+top:0;
+width:100%;
+height:100%;
 display:flex;
 align-items:center;
 justify-content:center;
-pointer-events:none;}
+overflow-x:hidden;}
+
+.Wrapper {
+position:absolute;
+top:0;
+width:100%;
+height:100%;
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:hidden;}
+
+.Container {
+position:absolute;
+width:100%;
+height:calc(300px + 500px*(100vw - 360px)/1200px);
+display:flex;
+align-items:center;
+justify-content:center;}
+
+.M {
+position:absolute;
+width:360px;
+height:300px;
+display:flex;
+align-items:center;
+justify-content:center;
+transform:scale(calc(1 + 1.8*(100vw - 360px)/1200px));}
 
 .main-container {
 position:absolute;
-left:-10px;
-bottom:-80px;
-width:660px;
-height:660px;
+left:-20px;
+bottom:-120px;
+width:900px;
+height:900px;
+display:flex;
+align-items:center;
+justify-content:center;}
+
+.phone {
+position:absolute;
+width:900px;
+height:900px;
 display:flex;
 align-items:center;
 justify-content:center;
 pointer-events:none;
 overflow:hidden;
-clip-path:path('M406.187 105.204L53.457 358.49C33.5474 374.44 34.8675 392.37 53.4573 408.32L193.983 517.539C213.615 532.798 241.043 532.987 260.884 518L609.397 254.756C632.057 237.82 630.957 217.58 607.857 200.86L472.63 105.001C452.71 90.8802 426.021 90.9616 406.187 105.204Z');}
+background:#00E0FF;
+clip-path:path('M553.896 143.459L72.8997 488.85C45.7504 510.6 47.5505 535.05 72.9002 556.8L264.526 705.735C291.298 726.542 328.699 726.8 355.755 706.364L831 347.394C861.9 324.3 860.4 296.7 828.9 273.9L644.5 143.183C617.335 123.927 580.942 124.038 553.896 143.459Z');}
 
-.Wrapper {
+.screen {
 position:absolute;
 width:400px;
 height:750px;
@@ -78,15 +107,12 @@ display:flex;
 align-items:center;
 justify-content:center;
 overflow:hidden;
-background:#00E0FF;
-transform:scale(0.7) rotate(37.5deg) translate(0,-40px) skewX(-18deg);}
+transform:scale(0.9) rotate(37.5deg) translate(-10px,-20px) skewX(-18deg);}
 
 .MockUp {
 position:absolute;
-left:-10px;
-bottom:-80px;
-width:660px;
-height:auto;
+width:900px;
+height:900px;
 filter:drop-shadow(0 10px 15px rgba(0,0,0,0.5));}
 
 .BottomNavBar {
@@ -172,18 +198,6 @@ width:415px;
 height:50px;
 filter:blur(5px);
 background:var(--background);
-pointer-events:none;}
-
-.ICONS {
-position:absolute;
-bottom:20px;
-left:0;
-width:135px;
-height:80px;
-display:flex;
-align-items:center;
-justify-content:center;
-list-style:none;
 pointer-events:none;}
 
 .ICONS {
@@ -328,26 +342,27 @@ animation:trim1 1.5s forwards;}
 .ICON.active #B2, .ICON.active #B4 {
 animation:trim1 2s forwards;}
 
-@media screen and (min-width:600px) {
-
-.Container {
-transform:scale(calc(1 + 2*(100vw - 360px)/1200px));}
-
-}
-
 </style>
+
 </head>
+
 <body>
 
-<div class="Body">
+<div class="Main-Container">
+
+<div class="Wrapper">
 
 <div class="Container">
 
+<section class="M">
+
+<section class="main-container">
+
 <img class="MockUp" src="MockUp.png">
 
-<div class="main-container">
+<section class="phone">
 
-<div class="Wrapper">
+<section class="screen">
 
 <nav class="BottomNavBar">
 
@@ -356,7 +371,7 @@ transform:scale(calc(1 + 2*(100vw - 360px)/1200px));}
 <div class="indicator">
 
 <svg class="background" style="filter:drop-shadow(0 -2px 4px rgba(0,0,0,0.2));" width="1240" height="60" viewBox="0 0 1240 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M557 0H0V60H1240V0H683C674.667 0 666.667 3.26674 660.715 9.09907L633.999 35.2814C626.222 42.9024 613.778 42.9024 606.001 35.2814L579.285 9.09907C573.333 3.26674 565.333 0 557 0Z"/>
+ <path d="M557 0H0V60H1240V0H683C674.667 0 666.667 3.26674 660.715 9.09907L633.999 35.2814C626.222 42.9024 613.778 42.9024 606.001 35.2814L579.285 9.09907C573.333 3.26674 565.333 0 557 0Z"/>
 </svg>
 
 <ul class="ICONS">
@@ -536,7 +551,13 @@ transform:scale(calc(1 + 2*(100vw - 360px)/1200px));}
 
 </nav>
 
-</div>
+</section>
+
+</section>
+
+</section>
+
+</section>
 
 </div>
 
@@ -545,6 +566,26 @@ transform:scale(calc(1 + 2*(100vw - 360px)/1200px));}
 </div>
 
 <script>
+
+const Wrapper = document.querySelector(".Wrapper");
+const Container = document.querySelector(".Container");
+
+function Resize() {
+
+if(window.innerHeight < Container.offsetHeight){
+
+Wrapper.style.height = "calc(300px + 500px*(100vw - 360px)/1200px)";
+
+}else{
+
+Wrapper.style.height = "100%";
+
+}
+
+}
+
+Resize();
+window.addEventListener("resize",Resize);
 
 const IconAs = document.querySelectorAll(".icon.A");
 const IconBs = document.querySelectorAll(".icon.B");
@@ -744,9 +785,8 @@ Clicks.forEach((click, index) => {
     click.addEventListener("click", icons[index]);
 });
 
-
 </script>
-       
+
 </body>
-       
+
 </html>
