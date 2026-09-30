@@ -438,6 +438,26 @@ animation:BlobC2 0.8s forwards;}
 
 <script>
 
+const Wrapper = document.querySelector(".Wrapper");
+const Container = document.querySelector(".Container");
+
+function Resize() {
+
+if(window.innerHeight < Container.offsetHeight){
+
+Wrapper.style.height = "calc(200px + 600px*(100vw - 360px)/1200px)";
+
+}else{
+
+Wrapper.style.height = "100%";
+
+}
+
+}
+
+Resize();
+window.addEventListener("resize",Resize);
+ 
 const Nav = document.querySelector("nav");
 const Add = document.querySelector(".icon.Add");
 const Submenu = document.querySelector(".submenu");
