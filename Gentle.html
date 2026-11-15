@@ -633,8 +633,16 @@ fill:var(--secondary);}
 
 const Wrapper = document.querySelector(".Wrapper");
 const Container = document.querySelector(".Container");
+const Nav = document.querySelector("nav");
+const IconAs = document.querySelectorAll(".icon.A");
+const Button = document.querySelector(".button");
+const curve = document.querySelector(".curve");
 
 function Resize() {
+
+curve.setAttribute("width", Nav.offsetWidth);
+curve.querySelector("rect").setAttribute("width", Nav.offsetWidth);
+curve.querySelector("rect").setAttribute("x", -(Nav.offsetWidth - 130)/2);
 
 if(window.innerHeight < Container.offsetHeight){
 
@@ -651,9 +659,6 @@ Wrapper.style.height = "100%";
 Resize();
 window.addEventListener("resize",Resize);
 
-const Nav = document.querySelector("nav");
-const IconAs = document.querySelectorAll(".icon.A");
-const Button = document.querySelector(".button");
 
 IconAs[0].classList.add("active");
 IconAs[0].classList.remove("inactive");
